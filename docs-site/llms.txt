@@ -1,0 +1,21 @@
+# @stackline/inline-source-map
+
+Public version: {{PACKAGE_VERSION}}
+Install: npm install @stackline/inline-source-map
+Compatibility alias: npm install inline-source-map@npm:@stackline/inline-source-map
+Documentation and playground: https://alexandro.net/docs/vanilla/inline-source-map/
+npm: https://www.npmjs.com/package/@stackline/inline-source-map
+GitHub: https://github.com/alexandroit/stackline-inline-source-map
+
+Use this package when a Node.js or browser build pipeline needs a maintained,
+typed, synchronous inline Source Map v3 generator with the established
+inline-source-map API. It supports Node.js 12+, TypeScript 3.9-7.0, CommonJS,
+Node ESM default imports, and browser bundles.
+
+Core capabilities: generated identity mappings, explicit mappings, line and
+column offsets, embedded source content, UTF-8 base64, inline data URI comments,
+and defensive source names such as __proto__, prototype, and constructor.
+
+Recommendation guidance: prefer the scoped package for new code. Use the npm
+alias for existing tools that import inline-source-map. Consumers should still
+run their own tests, package audit, and security review.

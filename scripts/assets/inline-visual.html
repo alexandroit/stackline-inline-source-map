@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; width: 100%; }
+    body { background: #102333; color: #eef7f7; font-family: Inter, Arial, sans-serif; overflow: hidden; }
+    .frame { display: grid; gap: 50px; grid-template-columns: 1fr 1fr; height: 100%; padding: 72px; position: relative; }
+    .panel { background: #172f41; border: 2px solid #4b6c7d; border-radius: 8px; min-width: 0; padding: 26px; position: relative; z-index: 2; }
+    .label { color: #5cd1c7; font-size: 19px; font-weight: 800; margin-bottom: 20px; }
+    .line { align-items: center; display: grid; font-family: monospace; font-size: 22px; grid-template-columns: 36px 1fr; line-height: 1.9; }
+    .number { color: #8da2ae; }
+    .keyword { color: #f2b84b; }
+    .string { color: #63d5a4; }
+    .json { color: #d5e5ea; font-family: monospace; font-size: 19px; line-height: 1.65; white-space: pre; }
+    .accent { color: #ef826b; }
+    .wire { background: #5cd1c7; height: 3px; left: 47%; position: absolute; transform-origin: left center; width: 100px; z-index: 3; }
+    .wire.one { top: 205px; transform: rotate(-7deg); }
+    .wire.two { background: #ef826b; top: 283px; transform: rotate(8deg); }
+    .wire.three { background: #f2b84b; top: 361px; transform: rotate(-4deg); }
+    .title { bottom: 28px; color: #a9c0ca; font-size: 17px; left: 72px; position: absolute; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <section class="panel">
+      <div class="label">ORIGINAL SOURCE</div>
+      <div class="line"><span class="number">1</span><span><span class="keyword">const</span> greeting = <span class="string">"Hello"</span>;</span></div>
+      <div class="line"><span class="number">2</span><span>console.log(greeting);</span></div>
+      <div class="line"><span class="number">3</span><span>export { greeting };</span></div>
+    </section>
+    <section class="panel">
+      <div class="label">SOURCE MAP V3</div>
+      <div class="json">{
+  "version": <span class="accent">3</span>,
+  "file": "bundle.js",
+  "sources": ["src/input.ts"],
+  "mappings": "AAAA;AACA;AACA"
+}</div>
+    </section>
+    <span class="wire one"></span><span class="wire two"></span><span class="wire three"></span>
+    <div class="title">@stackline/inline-source-map · deterministic line mappings</div>
+  </div>
+</body>
+</html>

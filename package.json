@@ -1,0 +1,89 @@
+{
+  "name": "@stackline/inline-source-map",
+  "version": "1.0.1",
+  "description": "Maintained inline-source-map-compatible generator for Node.js, TypeScript, CommonJS, ESM, and browser bundles",
+  "keywords": [
+    "inline-source-map",
+    "source-map",
+    "sourcemap",
+    "base64",
+    "bundle",
+    "transpile",
+    "typescript",
+    "commonjs",
+    "browser",
+    "stackline"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Alexandro Paixao Marques",
+    "url": "https://github.com/alexandroit"
+  },
+  "homepage": "https://alexandro.net/docs/vanilla/inline-source-map/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandroit/stackline-inline-source-map.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandroit/stackline-inline-source-map/issues"
+  },
+  "type": "commonjs",
+  "main": "./index.js",
+  "browser": "./dist/browser.cjs",
+  "types": "./index.d.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts",
+    "examples",
+    "CHANGELOG.md",
+    "COMPATIBILITY_CONTRACT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "MIGRATION.md",
+    "NOTICE",
+    "README.md",
+    "SECURITY.md",
+    "THIRD_PARTY_LICENSES.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "eslint .",
+    "test": "npm run build && npm run lint && npm run test:coverage && npm run test:compatibility && npm run test:types && npm run test:browser && npm run test:examples && npm run test:package && npm run test:install && npm run test:docs",
+    "test:unit": "node test/run.js",
+    "test:coverage": "c8 --all --include=index.js --check-coverage --lines 100 --functions 100 --statements 100 --branches 90 node test/run.js",
+    "test:compatibility": "node test/compatibility.js",
+    "test:types": "tsc -p test/types/tsconfig.json",
+    "test:browser": "node scripts/check-browser.mjs",
+    "test:examples": "node examples/basic.js",
+    "test:package": "publint",
+    "test:attw": "attw --pack .",
+    "test:install": "node scripts/smoke-install.mjs",
+    "test:docs": "npm run docs:build && node scripts/check-docs.mjs",
+    "docs:build": "npm run build && node scripts/build-docs.mjs",
+    "docs:serve": "node scripts/serve-docs.mjs",
+    "audit:dependencies": "npm audit --audit-level=low",
+    "audit:signatures": "npm audit signatures",
+    "verify:prepack": "npm run build && npm run lint && npm run test:coverage && npm run test:compatibility && npm run test:types && npm run test:browser && npm run test:package",
+    "prepack": "npm run verify:prepack"
+  },
+  "dependencies": {
+    "source-map": "^0.8.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "c8": "12.0.0",
+    "esbuild": "0.28.2",
+    "eslint": "10.9.1",
+    "inline-source-map": "0.6.3",
+    "publint": "0.3.24",
+    "typescript": "7.0.2"
+  }
+}

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@stackline/inline-source-map - Inline Source Map v3 generator</title>
+    <meta name="description" content="Generate inline Source Map v3 data with a maintained inline-source-map-compatible API for Node.js, TypeScript, and browser build pipelines.">
+    <meta name="keywords" content="inline source map, Source Map v3, JavaScript build tools, TypeScript source maps, browser bundler, Stackline, npm">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://alexandro.net/docs/vanilla/inline-source-map/">
+    <link rel="alternate" type="text/plain" href="./llms.txt" title="LLM summary">
+    <link rel="alternate" type="text/plain" href="./llms-full.txt" title="Full LLM reference">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@stackline/inline-source-map">
+    <meta property="og:description" content="A maintained, typed, inline-source-map-compatible Source Map v3 generator.">
+    <meta property="og:url" content="https://alexandro.net/docs/vanilla/inline-source-map/">
+    <meta property="og:image" content="https://alexandro.net/docs/vanilla/inline-source-map/assets/inline-source-map-flow.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@stackline/inline-source-map">
+    <meta name="twitter:description" content="Generate and inspect inline Source Map v3 data in the browser.">
+    <meta name="twitter:image" content="https://alexandro.net/docs/vanilla/inline-source-map/assets/inline-source-map-flow.png">
+    <meta name="theme-color" content="#0e6f6a">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "@stackline/inline-source-map",
+        "version": "{{PACKAGE_VERSION}}",
+        "description": "A maintained inline-source-map-compatible Source Map v3 generator.",
+        "codeRepository": "https://github.com/alexandroit/stackline-inline-source-map",
+        "downloadUrl": "https://www.npmjs.com/package/@stackline/inline-source-map",
+        "license": "https://opensource.org/license/mit",
+        "programmingLanguage": ["JavaScript", "TypeScript"],
+        "runtimePlatform": ["Node.js", "Web browser"],
+        "author": {
+          "@type": "Person",
+          "name": "Alexandro Paixao Marques",
+          "url": "https://github.com/alexandroit"
+        }
+      }
+    </script>
+    <script defer src="./package.js"></script>
+    <script defer src="./analytics.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#playground">Skip to generator</a>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="@stackline/inline-source-map documentation home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>@stackline/inline-source-map</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#playground">Generator</a>
+        <a href="#api">API</a>
+        <a href="https://github.com/alexandroit/stackline-inline-source-map">GitHub</a>
+        <a href="https://www.npmjs.com/package/@stackline/inline-source-map">npm</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="product-intro" aria-labelledby="page-title">
+        <div class="intro-content">
+          <p class="eyebrow">Source Map v3 generation</p>
+          <h1 id="page-title">@stackline/inline-source-map</h1>
+          <p>
+            Generate inline source maps with the familiar synchronous API,
+            first-party types, Unicode-safe browser output, and modern release gates.
+          </p>
+          <div class="install-row">
+            <code>npm install @stackline/inline-source-map</code>
+            <button class="compact-button" type="button" data-copy="npm install @stackline/inline-source-map">Copy</button>
+          </div>
+          <div class="release-line" aria-label="Compatibility summary">
+            <span>v{{PACKAGE_VERSION}}</span>
+            <span>Node 12+</span>
+            <span>TypeScript 3.9-7.0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="tool-band" id="playground" aria-labelledby="tool-title">
+        <div class="section-inner wide">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Runs the production browser bundle</p>
+              <h2 id="tool-title">Inline map generator</h2>
+            </div>
+            <button class="icon-button" id="reset-button" type="button" title="Reset generator" aria-label="Reset generator">&#8635;</button>
+          </div>
+
+          <div class="control-bar">
+            <label><span>Output file</span><input id="file-name" type="text" value="bundle.js" autocomplete="off"></label>
+            <label><span>Source file</span><input id="source-file" type="text" value="src/input.ts" autocomplete="off"></label>
+            <label><span>Source root</span><input id="source-root" type="text" value="" placeholder="optional" autocomplete="off"></label>
+            <label class="number-control"><span>Line offset</span><input id="line-offset" type="number" min="0" step="1" value="0"></label>
+            <label class="number-control"><span>Column offset</span><input id="column-offset" type="number" min="0" step="1" value="0"></label>
+            <button class="primary-button" id="generate-button" type="button">Generate</button>
+          </div>
+
+          <div class="workspace-grid">
+            <section class="editor-panel" aria-labelledby="source-label">
+              <header><h3 id="source-label">Original source</h3><span>UTF-8</span></header>
+              <textarea id="source-input" spellcheck="false" aria-label="Original source code"></textarea>
+            </section>
+
+            <section class="editor-panel output-panel" aria-labelledby="output-label">
+              <header>
+                <h3 id="output-label">Generated output</h3>
+                <button class="text-button" id="copy-output-button" type="button">Copy</button>
+              </header>
+              <div class="segmented-control" role="group" aria-label="Output format">
+                <button type="button" data-output="json" aria-pressed="true">Map JSON</button>
+                <button type="button" data-output="comment" aria-pressed="false">Inline comment</button>
+                <button type="button" data-output="base64" aria-pressed="false">Base64</button>
+              </div>
+              <pre id="result-output" tabindex="0" aria-live="polite"></pre>
+            </section>
+          </div>
+
+          <div class="status-bar" role="status" aria-live="polite">
+            <span class="status-indicator" id="status-indicator" aria-hidden="true"></span>
+            <span id="status-text">Ready</span>
+            <span class="status-separator" aria-hidden="true"></span>
+            <span id="line-count">0 source lines</span>
+            <span class="status-separator" aria-hidden="true"></span>
+            <span id="byte-count">0 bytes</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band" aria-labelledby="migration-title">
+        <div class="section-inner content-grid">
+          <div>
+            <p class="eyebrow">Lowest-change migration</p>
+            <h2 id="migration-title">Keep the original import name</h2>
+            <p>Use an npm alias when a build tool already requires <code>inline-source-map</code>.</p>
+          </div>
+          <div class="code-surface">
+            <pre><code>npm install inline-source-map@npm:@stackline/inline-source-map</code></pre>
+            <pre><code>const inlineSourceMap = require('inline-source-map');</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band muted" id="api" aria-labelledby="api-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div><p class="eyebrow">Public contract</p><h2 id="api-title">Small synchronous API</h2></div>
+            <a class="inline-link" href="https://github.com/alexandroit/stackline-inline-source-map/blob/main/README.md#api">Full reference</a>
+          </div>
+          <div class="api-table-wrapper">
+            <table>
+              <thead><tr><th>Method</th><th>Purpose</th><th>Return</th></tr></thead>
+              <tbody>
+                <tr><td><code>inlineSourceMap(options?)</code></td><td>Create a generator</td><td><code>Generator</code></td></tr>
+                <tr><td><code>addGeneratedMappings(file, source, offset?)</code></td><td>Create identity mappings by line</td><td>Generator</td></tr>
+                <tr><td><code>addMappings(file, mappings, offset?)</code></td><td>Add explicit mapping positions</td><td>Generator</td></tr>
+                <tr><td><code>addSourceContent(file, content)</code></td><td>Embed original source safely</td><td>Generator</td></tr>
+                <tr><td><code>inlineMappingUrl()</code></td><td>Build a complete data URI comment</td><td>String</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-band" aria-labelledby="proof-title">
+        <div class="section-inner proof-grid">
+          <div><p class="eyebrow">Release evidence</p><h2 id="proof-title">Compatibility is measured</h2></div>
+          <dl class="proof-list">
+            <div><dt>14</dt><dd>focused regression tests</dd></div>
+            <div><dt>5</dt><dd>differential upstream scenarios</dd></div>
+            <div><dt>100%</dt><dd>line, statement, and function coverage</dd></div>
+            <div><dt>12-24</dt><dd>tested Node.js runtime range</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="resource-band" aria-labelledby="resources-title">
+        <div class="section-inner resource-grid">
+          <div>
+            <p class="eyebrow">Machine-readable documentation</p>
+            <h2 id="resources-title">AI and crawler resources</h2>
+            <p>#Stackline #SourceMaps #JavaScript #OpenSource #NPM #AIReadyDocs</p>
+          </div>
+          <nav aria-label="Documentation resources">
+            <a href="./llms.txt">llms.txt</a>
+            <a href="./llms-full.txt">llms-full.txt</a>
+            <a href="https://alexandro.net/sitemap.xml">Public sitemap</a>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div><strong>@stackline/inline-source-map</strong><span>MIT licensed. Independent and not affiliated with the upstream maintainers.</span></div>
+      <nav aria-label="Footer navigation">
+        <a href="https://alexandro.net/docs/open-source/">All packages</a>
+        <a href="./guides/migration.md">Migration</a>
+        <a href="https://github.com/alexandroit/stackline-inline-source-map/blob/main/SECURITY.md">Security</a>
+        <a href="https://github.com/alexandroit/stackline-inline-source-map/blob/main/CHANGELOG.md">Changelog</a>
+      </nav>
+    </footer>
+  </body>
+</html>

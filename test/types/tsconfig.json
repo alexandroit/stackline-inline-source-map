@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmit": true,
+    "strict": true,
+    "target": "es2018",
+    "types": []
+  },
+  "files": [
+    "index.ts"
+  ]
+}

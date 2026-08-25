@@ -1,0 +1,19 @@
+@stackline/inline-source-map
+Copyright (c) 2026 Alexandro Paixao Marques and contributors
+
+This package is a maintained fork of inline-source-map, originally created by
+Thorsten Lorenz and distributed under the MIT License:
+
+https://github.com/thlorenz/inline-source-map
+
+The original copyright and license notice are preserved in LICENSE. Stackline
+changes include modern dependency support, portable tests, TypeScript
+declarations, browser-safe UTF-8 base64 encoding, documentation, CI, and
+defensive handling of source file names used as object keys.
+
+The generated browser entry includes portions of Mozilla's BSD-3-Clause
+`source-map` package. Its notice and license are reproduced in
+THIRD_PARTY_LICENSES.md.
+
+This project is independent and is not affiliated with or endorsed by the
+original maintainers or Mozilla.
