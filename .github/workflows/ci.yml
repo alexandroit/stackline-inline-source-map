@@ -28,6 +28,7 @@ jobs:
       - run: npm test
       - run: npm run test:attw
       - run: npm run audit:dependencies
+      - run: npm run audit:signatures
       - run: npm pack --dry-run
 
   runtime:
