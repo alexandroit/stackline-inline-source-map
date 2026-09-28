@@ -1,6 +1,6 @@
 {
   "name": "@stackline/inline-source-map",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Maintained inline-source-map-compatible generator for Node.js, TypeScript, CommonJS, ESM, and browser bundles",
   "keywords": [
     "inline-source-map",
@@ -12,7 +12,8 @@
     "typescript",
     "commonjs",
     "browser",
-    "stackline"
+    "stackline",
+    "inline"
   ],
   "license": "MIT",
   "author": {
