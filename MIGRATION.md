@@ -23,7 +23,7 @@ The resulting manifest entry is equivalent to:
 ```json
 {
   "dependencies": {
-    "inline-source-map": "npm:@stackline/inline-source-map@^1.0.0"
+    "inline-source-map": "npm:@stackline/inline-source-map@^1.0.2"
   }
 }
 ```
