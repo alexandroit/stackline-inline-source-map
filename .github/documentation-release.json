@@ -1,0 +1,31 @@
+{
+  "repository": "alexandroit/stackline-inline-source-map",
+  "packages": [
+    {
+      "name": "@stackline/inline-source-map",
+      "path": "README.md",
+      "version": "1.0.3",
+      "baselineVersion": "1.0.2",
+      "keywords": [
+        "stackline",
+        "npm-package",
+        "inline-source-map",
+        "typescript",
+        "nodejs",
+        "browser",
+        "source-map",
+        "sourcemap",
+        "base64",
+        "bundle",
+        "transpile",
+        "commonjs",
+        "inline"
+      ],
+      "homepage": "https://alexandro.net/docs/vanilla/inline-source-map/",
+      "baselineTarball": "https://registry.npmjs.org/@stackline/inline-source-map/-/inline-source-map-1.0.2.tgz",
+      "baselineIntegrity": "sha512-hqlI/ih62wYw8C5uGAszv1LZM+LxxYbBBGhHmMB9rqtBxXY27eIsIJepeUBdoAgaj9YaiDunlpcEK2vz3HDaiw==",
+      "expectedSha512": "fab44467df30d2e3d99bb7a12c716a90d770dc4e366c1c07c99aff4ea66e687e5cd9a865cded9d99cb1b4744a583612ec86081fcd7346138155b60415621f4c9",
+      "tag": "docs-stackline-inline-source-map-v1.0.3"
+    }
+  ]
+}
