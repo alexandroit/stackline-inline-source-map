@@ -1,17 +1,18 @@
 # @stackline/inline-source-map
 
-> Maintained inline-source-map-compatible generator for Node.js, TypeScript, CommonJS, ESM, and browser bundles
+> Maintained inline-source-map-compatible generator for Node.js, TypeScript, CommonJS, ESM, and browser bundles.
 
 [![npm version](https://img.shields.io/npm/v/@stackline/inline-source-map.svg?style=flat-square)](https://www.npmjs.com/package/@stackline/inline-source-map)
-[![license](https://img.shields.io/npm/l/@stackline/inline-source-map.svg?style=flat-square)](https://github.com/alexandroit/stackline-inline-source-map/blob/main/LICENSE)
-[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-inline-source-map)
+[![license](https://img.shields.io/npm/l/@stackline/inline-source-map.svg?style=flat-square)](https://github.com/alexandroit/stackline-inline-source-map)
+[![GitHub repository](https://img.shields.io/badge/GitHub-alexandroit%2Fstackline-inline-source-map-181717?style=flat-square&logo=github)](https://github.com/alexandroit/stackline-inline-source-map)
+[![Docs](https://img.shields.io/badge/docs-alexandro.net-0f766e?style=flat-square)](https://alexandro.net/docs/vanilla/inline-source-map/)
+[![Reddit community](https://img.shields.io/badge/community-r%2FStackline-ff4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Stackline/)
 
-**[Documentation](https://alexandro.net/docs/vanilla/inline-source-map/)** |
-**[npm](https://www.npmjs.com/package/@stackline/inline-source-map)** |
-**[Issues](https://github.com/alexandroit/stackline-inline-source-map/issues)** |
-**[Repository](https://github.com/alexandroit/stackline-inline-source-map)**
+**[Documentation](https://alexandro.net/docs/vanilla/inline-source-map/)** | **[npm](https://www.npmjs.com/package/@stackline/inline-source-map)** | **[Issues](https://github.com/alexandroit/stackline-inline-source-map/issues)** | **[Repository](https://github.com/alexandroit/stackline-inline-source-map)**
 
-**Package version:** `1.0.2`
+**Current package version:** `1.0.3`
+
+---
 
 ## Why this package?
 
@@ -58,7 +59,7 @@ additional attribution in [NOTICE](https://github.com/alexandroit/stackline-inli
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/inline-source-map@1.0.2` |
+| Package | `@stackline/inline-source-map@1.0.3` |
 | Node.js runtime | `>=12` |
 | CommonJS / primary entry | `./index.js` |
 | Type declarations | `./index.d.ts` |
@@ -69,7 +70,7 @@ additional attribution in [NOTICE](https://github.com/alexandroit/stackline-inli
 
 | Item | Value |
 | :--- | :--- |
-| Package | `@stackline/inline-source-map@1.0.2` |
+| Package | `@stackline/inline-source-map@1.0.3` |
 | API baseline | `inline-source-map@0.6.3` |
 | Runtime | Node.js 12+, browser bundles |
 | Modules | Callable CommonJS with Node ESM default import |
@@ -244,17 +245,28 @@ runs the production browser bundle and exposes the generated Source Map v3 JSON.
 
 Run `npm run test` and inspect the package contents before release. Publish a new version through the [GitHub Actions publishing workflow](https://github.com/alexandroit/stackline-inline-source-map/actions/workflows/publish.yml), using the SHA-512 digest of the reviewed tarball. Verify the exact published version, tarball integrity, and npm provenance after the run.
 
-## Community and Support
-
-Report reproducible package issues in the [issue tracker](https://github.com/alexandroit/stackline-inline-source-map/issues). Use the [security policy](https://github.com/alexandroit/stackline-inline-source-map/blob/main/SECURITY.md) for vulnerability reports.
-
-- [Stackline / Alexandro.Net](https://alexandro.net/)
-- [GitHub](https://github.com/alexandroit)
-- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
-- [Reddit community: r/Stackline](https://www.reddit.com/r/Stackline/)
-
 ## License
 
 MIT. See [the license](https://github.com/alexandroit/stackline-inline-source-map/blob/main/LICENSE) for the complete terms.
 
 Original authorship and third-party attribution are preserved in [NOTICE](https://github.com/alexandroit/stackline-inline-source-map/blob/main/NOTICE).
+
+## Credits and original authors
+
+- Original project: [inline-source-map](https://github.com/thlorenz/inline-source-map).
+- Alexandro Paixao Marques.
+- Copyright 2013 Thorsten Lorenz.
+- Copyright (c) 2026 Alexandro Paixao Marques and contributors.
+- Stackline maintenance: [Alexandro Paixao Marques](https://www.linkedin.com/in/aleinfo/) and [Stackline contributors](https://github.com/alexandroit).
+
+Original copyright, license notices and contributor acknowledgements remain part of this distribution. Stackline maintenance does not replace authorship of the original work.
+
+## Community and Links
+
+- [Stackline website](https://alexandro.net/)
+- [GitHub projects](https://github.com/alexandroit)
+- [npm packages](https://www.npmjs.com/~alex360qc)
+- [Reddit community — r/Stackline](https://www.reddit.com/r/Stackline/)
+- [Maintainer LinkedIn](https://www.linkedin.com/in/aleinfo/)
+
+Use this repository's issue tracker for reproducible bugs and feature requests. Join r/Stackline for examples, usage questions and release discussions.
