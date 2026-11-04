@@ -10,7 +10,7 @@
 
 **[Documentation](https://alexandro.net/docs/vanilla/inline-source-map/)** | **[npm](https://www.npmjs.com/package/@stackline/inline-source-map)** | **[Issues](https://github.com/alexandroit/stackline-inline-source-map/issues)** | **[Repository](https://github.com/alexandroit/stackline-inline-source-map)**
 
-**Current package version:** `1.0.4`
+**Current package version:** `1.0.5`
 
 ---
 
@@ -59,7 +59,7 @@ additional attribution in [NOTICE](https://github.com/alexandroit/stackline-inli
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/inline-source-map@1.0.4` |
+| Package | `@stackline/inline-source-map@1.0.5` |
 | Node.js runtime | `>=12` |
 | CommonJS / primary entry | `./index.js` |
 | Type declarations | `./index.d.ts` |
@@ -70,7 +70,7 @@ additional attribution in [NOTICE](https://github.com/alexandroit/stackline-inli
 
 | Item | Value |
 | :--- | :--- |
-| Package | `@stackline/inline-source-map@1.0.4` |
+| Package | `@stackline/inline-source-map@1.0.5` |
 | API baseline | `inline-source-map@0.6.3` |
 | Runtime | Node.js 12+, browser bundles |
 | Modules | Callable CommonJS with Node ESM default import |
